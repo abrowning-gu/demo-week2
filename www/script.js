@@ -17,23 +17,18 @@ $(document).ready(function() {
         data : JSON.stringify(formData),
         dataType : 'json',
         success : function(response) {
+          //What happens when a successful response comes back from the server.
             if (response.valid == true){
-              console.log("good");
-              $("#result").html("We got a response: " + response.data);
-             
-                
+              $("#result").html("We got a response: " + response.data); 
             }else{
               $("#result").html("We got an invalid response.");
             }
-     
         },
         error : function(e) {
+          //What happens if an error occurs with the AJAX request.
           alert("Error!")
           console.log("ERROR: ", e);
         }
       });
-
-
    }
-
 });
